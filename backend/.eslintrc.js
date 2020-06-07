@@ -14,6 +14,6 @@ module.exports = {
     ecmaVersion: 11,
   },
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': 'warn',
   },
 };
