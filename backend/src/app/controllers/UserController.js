@@ -8,7 +8,7 @@ class UserController {
   }
 
   async store(req, res) {
-    const { name, email, password_hash, provider } = req.body;
+    const { name, email, password, provider } = req.body;
 
     const userExists = await User.findOne({ where: { email } });
 
@@ -21,7 +21,7 @@ class UserController {
     const { id } = await User.create({
       name,
       email,
-      password_hash,
+      password,
       provider,
     });
 
