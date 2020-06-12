@@ -11,7 +11,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Search() {
+export default function Search({ searchValue, setSearchValue, handleSearch }) {
   const classes = useStyles();
 
   return (
@@ -25,9 +25,16 @@ export default function Search() {
     >
       <InputBase
         fullWidth
+        value={searchValue}
+        onChange={(event) => setSearchValue(event.target.value)}
         placeholder="Insira o tipo de profissional que você deseja..."
       />
-      <Button className={classes.button} variant="contained" color="primary">
+      <Button
+        className={classes.button}
+        variant="contained"
+        color="primary"
+        onClick={handleSearch}
+      >
         Buscar
       </Button>
     </div>

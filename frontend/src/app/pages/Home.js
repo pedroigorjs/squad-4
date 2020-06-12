@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -32,6 +32,12 @@ const useStyles = makeStyles({
 function Home() {
   const classes = useStyles();
 
+  const [search, setSearch] = useState('');
+
+  const handleSearch = () => {
+    console.log(search);
+  };
+
   return (
     <div
       style={{
@@ -52,6 +58,9 @@ function Home() {
         <Search
           className={classes.search}
           label="Digite aqui o que vocês precisa"
+          searchValue={search}
+          setSearchValue={setSearch}
+          handleSearch={handleSearch}
         />
       </Container>
     </div>
