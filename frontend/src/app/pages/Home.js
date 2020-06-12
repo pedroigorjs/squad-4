@@ -1,11 +1,37 @@
 import React from 'react';
 
-import Menu from '../components/Menu';
+import { makeStyles } from '@material-ui/core/styles';
+
+import Container from '@material-ui/core/Container';
+
+import NavBar from '../components/NavBar';
 import Search from '../components/Search';
+import { H1, H3 } from '../components/Typography';
 
 import background from '../../assets/background.jpg';
 
+const useStyles = makeStyles({
+  title: {
+    color: '#fff',
+    textAlign: 'center',
+    marginBottom: '1rem',
+  },
+  subtitle: {
+    color: '#fff',
+    textAlign: 'center',
+    marginBottom: '1rem',
+  },
+  search: {
+    marginTop: '4rem',
+  },
+  hero: {
+    marginTop: '20vh',
+  },
+});
+
 function Home() {
+  const classes = useStyles();
+
   return (
     <div
       style={{
@@ -14,36 +40,20 @@ function Home() {
         height: '100vh',
       }}
     >
-      <Menu />
+      <NavBar />
 
-      <div
-        style={{
-          width: '42%',
-          textAlign: 'center',
-          margin: '8rem auto',
-        }}
-      >
-        <h1
-          style={{
-            color: '#fff',
-            fontSize: '3.375rem',
-            fontWeight: '300',
-          }}
-        >
+      <Container className={classes.hero}>
+        <H1 className={classes.title}>
           Encontre profissionais que resolverão o seu problema
-        </h1>
-        <h2
-          style={{
-            color: '#fff',
-            fontSize: '1.5rem',
-            fontWeight: '400',
-          }}
-        >
-          Peça orçamentos e contrate profissionais de qualidade com o Services
-        </h2>
-
-        <Search />
-      </div>
+        </H1>
+        <H3 className={classes.subtitle}>
+          Peça orçamentos e contrates profissionais de qualidade com o Services
+        </H3>
+        <Search
+          className={classes.search}
+          label="Digite aqui o que vocês precisa"
+        />
+      </Container>
     </div>
   );
 }
