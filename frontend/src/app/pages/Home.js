@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import Container from '@material-ui/core/Container';
+import Button from '@material-ui/core/Button';
 
 import NavBar from '../components/NavBar';
 import Search from '../components/Search';
@@ -46,7 +47,18 @@ function Home() {
         height: '100vh',
       }}
     >
-      <NavBar />
+      <NavBar>
+        <Button
+          variant="outlined"
+          color="primary"
+          className={classes.menuButton}
+        >
+          Entrar
+        </Button>
+        <Button variant="contained" color="primary">
+          Cadastrar
+        </Button>
+      </NavBar>
 
       <Container className={classes.hero}>
         <H1 className={classes.title}>

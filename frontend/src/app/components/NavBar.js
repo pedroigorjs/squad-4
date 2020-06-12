@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function NavBar() {
+function NavBar({ children }) {
   const classes = useStyles();
 
   return (
@@ -30,16 +29,7 @@ function NavBar() {
         <Typography variant="h6" className={classes.title}>
           Services
         </Typography>
-        <Button
-          variant="outlined"
-          color="primary"
-          className={classes.menuButton}
-        >
-          Entrar
-        </Button>
-        <Button variant="contained" color="primary">
-          Cadastrar
-        </Button>
+        {children}
       </Toolbar>
     </AppBar>
   );
