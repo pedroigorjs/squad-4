@@ -53,7 +53,7 @@ function Home() {
           Encontre profissionais que resolverão o seu problema
         </H1>
         <H3 className={classes.subtitle}>
-          Peça orçamentos e contrates profissionais de qualidade com o Services
+          Peça orçamentos e contrate profissionais de qualidade com o Services
         </H3>
         <Search
           className={classes.search}
