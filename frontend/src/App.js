@@ -1,20 +1,14 @@
 import React from 'react';
 
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Home from './app/pages/Home';
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#0D47A1',
-    },
-  },
-});
+import Theme from './app/utils/Theme';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={Theme}>
       <CssBaseline />
       <Home />
     </ThemeProvider>

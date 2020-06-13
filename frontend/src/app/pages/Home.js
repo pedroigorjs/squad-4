@@ -4,12 +4,12 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
 import NavBar from '../components/NavBar';
 import Search from '../components/Search';
-import { H1, H3 } from '../components/Typography';
 
-import background from '../../assets/background.jpg';
+import background from '../assets/background.jpg';
 
 const useStyles = makeStyles({
   title: {
@@ -61,12 +61,12 @@ function Home() {
       </NavBar>
 
       <Container className={classes.hero}>
-        <H1 className={classes.title}>
+        <Typography variant="h1" className={classes.title}>
           Encontre profissionais que resolverão o seu problema
-        </H1>
-        <H3 className={classes.subtitle}>
+        </Typography>
+        <Typography variant="h3" className={classes.subtitle}>
           Peça orçamentos e contrate profissionais de qualidade com o Services
-        </H3>
+        </Typography>
         <Search
           className={classes.search}
           label="Digite aqui o que vocês precisa"
