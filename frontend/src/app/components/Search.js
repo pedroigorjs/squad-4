@@ -9,20 +9,22 @@ const useStyles = makeStyles({
     marginLeft: '1rem',
     width: '150px',
   },
+  searchBar: {
+    backgroundColor: '#fff',
+    padding: '.5rem',
+    borderRadius: '4px',
+    display: 'flex',
+    maxWidth: (props) => `${props.maxWidth}px`,
+    minWidth: (props) => `${props.minWidth}px`,
+  },
 });
 
-export default function Search({ searchValue, setSearchValue, handleSearch }) {
-  const classes = useStyles();
+export default function Search(props) {
+  const classes = useStyles(props);
+  const { searchValue, setSearchValue, handleSearch } = props;
 
   return (
-    <div
-      style={{
-        backgroundColor: '#fff',
-        padding: '.5rem',
-        borderRadius: '4px',
-        display: 'flex',
-      }}
-    >
+    <div className={classes.searchBar}>
       <InputBase
         fullWidth
         value={searchValue}

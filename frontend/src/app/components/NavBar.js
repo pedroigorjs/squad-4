@@ -1,37 +1,42 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+
+import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import logo from '../assets/logo.svg';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   root: {
     flexGrow: 1,
   },
   menu: {
     backgroundColor: 'rgba(56, 56, 56, 0.9)',
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-    color: '#fff',
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
+});
 
 function NavBar({ children }) {
   const classes = useStyles();
 
   return (
-    <AppBar position="static" className={classes.menu}>
-      <Toolbar>
-        <Typography variant="h6" className={classes.title}>
-          Services
-        </Typography>
-        {children}
-      </Toolbar>
-    </AppBar>
+    <div className={classes.root}>
+      <AppBar position="static" className={classes.menu}>
+        <Toolbar>
+          <Grid container justify="center">
+            <Grid
+              container
+              direction="row"
+              justify="space-between"
+              alignItems="center"
+              xs={11}
+            >
+              <img src={logo} alt="Joble" />
+              {children}
+            </Grid>
+          </Grid>
+        </Toolbar>
+      </AppBar>
+    </div>
   );
 }
 
