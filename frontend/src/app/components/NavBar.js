@@ -11,12 +11,12 @@ const useStyles = makeStyles({
     flexGrow: 1,
   },
   menu: {
-    backgroundColor: 'rgba(56, 56, 56, 0.9)',
+    backgroundColor: ({ bgColor }) => bgColor || 'rgba(56, 56, 56, 0.9)',
   },
 });
 
-function NavBar({ children }) {
-  const classes = useStyles();
+function NavBar({ children, bgColor }) {
+  const classes = useStyles({ bgColor });
 
   return (
     <div className={classes.root}>
