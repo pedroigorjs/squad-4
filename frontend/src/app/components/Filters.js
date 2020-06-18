@@ -28,6 +28,7 @@ const useStyles = makeStyles(() => ({
   card: {
     maxWidth: '250px',
     textAlign: 'center',
+    marginBottom: '3rem',
   },
   input: {
     width: '100%',
