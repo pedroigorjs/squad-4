@@ -1,11 +1,12 @@
 import React from 'react';
 
+import NavBar from '../components/NavBar';
 import Filters from '../components/Filters';
 
 function Results() {
   return (
     <>
-      <h1>Results</h1>
+      <NavBar bgColor="#fff" />
       <Filters />
     </>
   );
