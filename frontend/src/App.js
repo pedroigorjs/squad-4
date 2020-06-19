@@ -3,6 +3,7 @@ import React from 'react';
 import { Router } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import GlobalStyles from './app/style/globalStyle';
 
 import Routes from './routes';
 
@@ -15,6 +16,7 @@ function App() {
       <Router history={history}>
         <CssBaseline />
         <Routes />
+        <GlobalStyles />
       </Router>
     </ThemeProvider>
   );
